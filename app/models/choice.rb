@@ -1,3 +1,7 @@
 class Choice < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :question
+  has_many :selections, :foreign_key => 'response_id'
+  has_many :responders, :through => :selections, :class_name => "User"
+
+  validates_presence_of :content
 end

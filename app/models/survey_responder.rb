@@ -1,3 +1,6 @@
 class SurveyResponder < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :survey
+  belongs_to :responder, :class_name => 'User'
+
+  validates :survey_id, :uniqueness => { :scope => :responder_id }
 end
