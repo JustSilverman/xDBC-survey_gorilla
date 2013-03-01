@@ -36,7 +36,7 @@ post '/login' do
   end 
 end 
 
-get '/logout' do  #J: you said this should be DELETE, how?
+get '/logout' do  #J: how can this be DELETE?
   session.clear
   redirect '/albums'
 end
