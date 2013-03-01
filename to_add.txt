@@ -1,0 +1,7 @@
+Add back to _nav_bar.erb
+
+  <% if current_user %> 
+    <a href='/logout'> Logout </a>
+  <% else %>
+    <a href='/'> Login/Signup </a>
+  <% end %>

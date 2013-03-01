@@ -1,0 +1,50 @@
+.container {
+    margin: 0px auto;
+    width: 750px;
+    padding: 90px 20px 20px 20px;
+    font-family: Georgia, serif;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 64px;
+  background-color: #34D0BA;  
+  float: left;
+  position: fixed;
+}
+
+.nav-bar a {
+  color: white;
+  font-size: 20pt;
+  padding: 40px;
+  position: relative;
+  top: 13px;
+  text-decoration: none;
+}
+
+
+/* --------------- LOGINSIGNUP ---------- */
+.login-signup {
+  width: 900px;
+  margin: auto;
+}
+
+.login-signup fieldset {
+  background-color: #5DD0C0;
+  border: 1px solid #dcdcdc;
+  color: white;
+  float: left;
+  margin: 30px 50px;
+  padding: 20px;
+  text-align: right;
+  width: 300px;
+}
+
+.login-signup legend {
+  width: 90px;
+  background-color: #FF8F40;
+  border: 1px solid #dcdcdc;
+  padding: 5px 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
