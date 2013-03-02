@@ -6,4 +6,18 @@ class Survey < ActiveRecord::Base
   has_many   :responders, :through => :survey_responders, :source => :user
 
   validates_presence_of :title
+
+  def process(params)
+    # false if ###
+    self.survey_responders.create(:responder_id => params[:responder_id])
+    create_responses(params)
+  end
+
+  private
+  def create_responses(params)
+    params.keys.each do |response_id|
+      Selection.create(:response_id  => response_id, 
+                       :responder_id => params[:responder_id])
+    end
+  end
 end

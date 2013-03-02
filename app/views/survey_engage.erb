@@ -1,0 +1,8 @@
+<form action="/surveys/submit" method="post">
+  <input type="hidden" name="survey_id" value="<%= @survey.id %>">
+  <input type="hidden" name="responder_id" value="<%= current_user.id %>">
+  <% @survey.questions.each do |question| %>
+    <%= erb :_question, :locals => {:question => question} %>
+  <% end %>
+  <input type="submit" value="Submit!">
+</form>
