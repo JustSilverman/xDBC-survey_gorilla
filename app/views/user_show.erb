@@ -1,2 +1,6 @@
-This is where we'll show a user profile page.
-We can play with <% @user %> 
+<h2>Created Surveys</h2>
+<%= erb :_survey_list, :locals => {:surveys => @user.created_surveys,
+                                   :message => "created"} %>
+<h2>Completed Surveys</h2>
+<%= erb :_survey_list, :locals => {:surveys => @user.responded_surveys,
+                                   :message => "completed"} %>

@@ -1,3 +1,8 @@
+body {
+  font-family: Helvetica;
+  color: #555;
+}
+
 .container {
     margin: 0px auto;
     width: 750px;
@@ -54,3 +59,15 @@
   text-align: left;
   color: #a00;
 }
+
+.survey-link a {
+  color: #000275;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.survey-link p {
+  margin: 10px 0;
+}
+
+

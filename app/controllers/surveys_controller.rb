@@ -8,12 +8,12 @@ post '/surveys' do
   redirect "/surveys/#{@survey.id}"
 end 
 
-get '/surverys/:survey_id' do
-  @survey = Survey.find(:survey_id)
+get '/surveys/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
   erb :survey_show
 end 
 
-get '/surverys/:survey_id/engage' do
-  @survey = Survey.find(:survey_id)
+get '/surveys/:survey_id/engage' do
+  @survey = Survey.find(params[:survey_id])
   erb :survey_engage
 end 
