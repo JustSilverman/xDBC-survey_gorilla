@@ -3,10 +3,10 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  puts "#{params[:questions]}"
   @survey = Survey.create :title      => params[:survey_title],
                           :creator_id => current_user.id
-  create_questions_and_choices(@survey, params[:questions])
+  @survey.add_questions(params[:questions])
+
   redirect "/surveys/#{@survey.id}"
 end
 

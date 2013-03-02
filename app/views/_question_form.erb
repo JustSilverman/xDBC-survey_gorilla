@@ -1,8 +1,8 @@
 <p>
   <label for="question">Question: </label>
   <input type="text" name="questions[][content]" placeholder='Enter your Question'>
-  <span class="removeQuestion">Remove Question</span>
-  <br><br><input type="text" name="questions[]choices[]" placeholder="question choice">
-  <br><input type="text" name="questions[]choices[]" placeholder="question choice">
-  <br><input type="text" name="questions[]choices[]" placeholder="question choice">
+  <span class="removeQuestion">Remove Question</span><br>
+  <% 3.times do %>
+    <br><input type="text" name="questions[]choices[]" placeholder="question choice">
+  <% end %>
 </p>
