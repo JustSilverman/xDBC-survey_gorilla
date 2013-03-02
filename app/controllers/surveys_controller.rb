@@ -5,19 +5,16 @@ end
 post '/surveys' do
   @survey = Survey.create :title      => params[:survey_title],
                           :creator_id => current_user.id
-  
-  params[:questions].each do |question|
-    @question = Question.create :content   => question.delete("content"),
-                                :survey_id => @survey.id 
-    create_choices(question)
-  end
+  create_questions_and_choices(params[:questions])
   redirect "/surveys/#{@survey.id}"
 end
 
 post '/surveys/submit' do
-  # raise params.inspect
   @survey = Survey.find(params[:survey_id])
-  if @survey.process(params)
+  @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
+                                          :responder_id => params[:responder_id])
+  if @survey.completed?(params) && @survey_responder.save
+    create_selections(params)
     redirect "/surveys/#{@survey.id}"
   else
     erb :survey_engage
@@ -33,10 +30,3 @@ get '/surveys/:survey_id/engage' do
   @survey = Survey.find(params[:survey_id])
   erb :survey_engage
 end 
-
-private
-def create_choices(question)
-  question.values.each do |choice|
-    Choice.create :content => choice, :question_id => @question.id
-  end
-end
