@@ -7,7 +7,7 @@ $(document).ready(function(){
     $(this).parent().before($node);
   });
   //remove a question
-  $('#survey-create-form').on('click', '.removeQuestion', function(){
+  $('.removeQuestion').click(function(){
      $(this).parent().remove();
      questionCount--;
   });
