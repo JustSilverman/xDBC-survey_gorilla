@@ -3,6 +3,8 @@ source :rubygems
 # PostgreSQL driver
 gem 'pg'
 
+gem 'debugger'
+
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
