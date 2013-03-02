@@ -1,14 +1,17 @@
 $(document).ready(function(){
   var questionCount = 1;
-  //add a question with 3 answers
+  //add a question with 3 choices
   $(this).on("click", '#add_question', function(){
     questionCount++;
-    var questionAnswers = '<p><label for="question'+questionCount+'">Question '+questionCount+': </label><input type="text" name="question'+questionCount+'" placeholder="Enter your Question" id="question'+questionCount+'"><span class="removeQuestion"> Remove Question</span><br><input type="text" name="answer1" placeholder="answer 1"><br><input type="text" name="answer2" placeholder="answer 2"><br><input type="text" name="answer3" placeholder="answer 3"></p>'
-    $(this).parent().before(questionAnswers); 
+    var questionchoices = '<p><label for="question">Question: </label><input type="text" name="questions[][content]" placeholder="Enter your Question"><span class="removeQuestion"> Remove Question</span><br><input type="text" name="questions[][choice1]" placeholder="choice 1"><br><input type="text" name="questions[][choice2]" placeholder="choice 2"><br><input type="text" name="questions[][choice3]" placeholder="choice 3"></p>'
+    $(this).parent().before(questionchoices); 
   });
-  //remove a question and its answers  
+  //remove a question and its choices  
   $(this).on("click", '.removeQuestion', function(){
      $(this).parent().remove();
      questionCount--;
   });
 });
+
+
+

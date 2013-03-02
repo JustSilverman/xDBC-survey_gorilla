@@ -1,15 +1,8 @@
 <form id='survey_create_form' action="/surveys" method="post">
 <p>Survey Title:
-  <input type="text" name="title" placeholder="Title">
+  <input type="text" name="survey_title" placeholder="Title">
 </p>
-<p>
-  <label for="question1">Question 1: </label>
-  <input type="text" name="question1" id="question1" placeholder='Enter your Question'>
-  <span class="removeQuestion">Remove Question</span>
-  <br><br><input type="text" name="answer1" placeholder="answer 1">
-  <br><input type="text" name="answer2" placeholder="answer 2">
-  <br><input type="text" name="answer3" placeholder="answer 3">
-</p>
+<%= erb :_question_form %>
 <p>
   <span id="add_question">Add Question</span>
 </p>

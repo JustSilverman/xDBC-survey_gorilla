@@ -3,7 +3,14 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  @survey = Survey.create params
+  @survey = Survey.create :title      => params[:survey_title],
+                          :creator_id => current_user.id
+  
+  params[:questions].each do |question|
+    @question = Question.create :content   => question.delete("content"),
+                                :survey_id => @survey.id 
+    create_choices(question)
+  end
   redirect "/surveys/#{@survey.id}"
 end
 
@@ -26,3 +33,10 @@ get '/surveys/:survey_id/engage' do
   @survey = Survey.find(params[:survey_id])
   erb :survey_engage
 end 
+
+private
+def create_choices(question)
+  question.values.each do |choice|
+    Choice.create :content => choice, :question_id => @question.id
+  end
+end
