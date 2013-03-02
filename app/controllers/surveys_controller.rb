@@ -14,8 +14,10 @@ post '/surveys/submit' do
   @survey = Survey.find(params[:survey_id])
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
                                           :responder_id => params[:responder_id])
-  if @survey.completed?(params) && @survey_responder.save
-    create_selections(params)
+
+  # Need to break if blank survey is submitted
+  if @survey.completed?(params[:selections].first.keys) && @survey_responder.save
+    @survey_responder.create_selections(params[:selections].first.values)
     redirect "/surveys/#{@survey.id}"
   else
     erb :survey_engage
@@ -29,5 +31,7 @@ end
 
 get '/surveys/:survey_id/engage' do
   @survey = Survey.find(params[:survey_id])
+  @survey_responder = SurveyResponder.new(:survey_id => @survey.id,
+                                          :responder_id => current_user.id)
   erb :survey_engage
 end

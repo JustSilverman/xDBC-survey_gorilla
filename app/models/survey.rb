@@ -13,9 +13,8 @@ class Survey < ActiveRecord::Base
     end
   end
 
-  def completed?(params)
-    params.delete_if { |key, v| [:survey_id, :responder_id].include? key }
-    if params.keys.map(&:to_i).sort == self.question_ids
+  def completed?(submitted_ids)
+    unless submitted_ids.map(&:to_i).sort == self.question_ids
       errors[:base] << "Survey is incomplete"
     end
   end
