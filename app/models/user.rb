@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   before_create :encrypt_password
 
   def authenticate(attempt)
-    self if self.password == Digest::MD5.hexdigest(attempt)
+    self.id if self.password == Digest::MD5.hexdigest(attempt)
   end
 
   private
