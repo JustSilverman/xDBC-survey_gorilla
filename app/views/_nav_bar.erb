@@ -1,4 +1,10 @@
 <div class="nav-bar">
   <a href='/home'> SurveyGorilla </a>
-  <a href='/surveys/new'> Create a Survey </a>
+  <a href='/surveys/new'> Create Survey </a>
+  <% if current_user %>
+    <a href='/users/<%= current_user.id %>'> Profile </a>
+    <a href='/logout'> Logout </a>
+  <% else %>
+    <a href='/home'> Login/Signup </a>
+  <% end %> 
 </div>

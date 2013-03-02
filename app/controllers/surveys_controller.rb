@@ -1,5 +1,5 @@
 get '/surveys/new' do
-  erb :create_survey
+  erb :survey_create
 end
 
 post '/surveys' do
@@ -14,7 +14,6 @@ post '/surveys/submit' do
   @survey = Survey.find(params[:survey_id])
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
                                           :responder_id => params[:responder_id])
-
   # Need to break if blank survey is submitted
   if @survey.completed?(params[:selections].first.keys) && @survey_responder.save
     @survey_responder.create_selections(params[:selections].first.values)
@@ -26,7 +25,7 @@ end
 
 get '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
-  erb :survey_show
+  erb :survey_display
 end
 
 get '/surveys/:survey_id/engage' do
