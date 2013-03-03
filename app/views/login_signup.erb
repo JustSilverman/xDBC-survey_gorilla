@@ -8,7 +8,7 @@
       <p>Password:
         <input type="password" name="password" placeholder="password">
       </p>
-      <input type="submit" value="Log in">
+      <input type="submit" value="Log in" class="submit-button">
     </form>
   </fieldset>
   <fieldset id='signup'>
@@ -23,7 +23,7 @@
       <p>Password:
         <input type="password" name="password" placeholder="password">
       </p>
-      <input type="submit" value="Sign up">
+      <input type="submit" value="Sign up" class="submit-button">
     </form>
     <%= erb :_errors, :locals => { :object => @user } if @user%>
   </fieldset>

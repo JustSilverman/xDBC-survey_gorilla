@@ -1,2 +1,4 @@
-This is where we will show a single survey with stats. 
-We can play with <% @survey %>
+<h2 class="survey-title"><%= @survey.title %></h2>
+<% @survey.questions.each do |question| %>
+  <%= erb :_question_results, :locals => {:question => question} %>
+<% end %>

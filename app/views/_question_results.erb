@@ -1,0 +1,7 @@
+<div class="question">
+  <h3 class="question-title"><%= question.content %></h3>
+  <% question.choices.each do |choice| %>
+    <div><%= "#{question.choice_percentage(choice.id)}% - #{choice.content}" %><div>
+  <% end %>
+</div>
+<hr>
