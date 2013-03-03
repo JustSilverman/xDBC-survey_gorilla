@@ -5,7 +5,7 @@ get '/' do
 end
 
 get '/home' do 
-  current_user ? erb(:all_surveys_show) : erb(:login_signup)
+  current_user ? erb(:surveys_show) : erb(:login_signup)
 end
 
 get '/users/:id' do

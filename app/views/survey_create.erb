@@ -1,10 +1,18 @@
 <form id='survey_create_form' action="/surveys" method="post">
-<p>Survey Title:
-  <input type="text" name="survey_title" placeholder="Title">
+<p id='title'>Survey Title:
+  <input type="text" name="survey_title" placeholder="Name your survey.">
 </p>
-<%= erb :_question_form %>
+<p class='question-tile'>
+  <label> Question: </label>
+  <input class="question-field" type="text" name="questions[][content]" placeholder='Enter your Question'>
+  <% 3.times do %>
+    <br><input class='choice-field' type="text" name="questions[]choices[]" placeholder="Enter a Choice">
+  <% end %>
+  <br><br>
+  <span class="remove-question"> Remove Question </span>
+</p>
 <p>
-  <span id="add_question">Add Question</span>
+  <span class="add-question">Add Question</span>
 </p>
 <p>
   <input type="submit" value="Create your Survey">

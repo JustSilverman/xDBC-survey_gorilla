@@ -60,6 +60,11 @@ body {
   text-transform: uppercase;
 }
 
+.login-signup #login {
+  padding-top: 40px;
+  height: 170px;
+}
+
 #error-explanation {
   margin-top: 10px;
   text-align: left;
@@ -78,11 +83,82 @@ body {
 }
 
 /* --------------- CREATE_SURVEY ---------- */
+/* Need to build a coord system here with postioning. */
+
 #survey_create_form {
-  margin: auto;
+  margin: 10px auto;
+  border: 5px ridge #00A876;
+  box-shadow: 5px 5px 5px #888;
+  background-color: ;
   width: 400px;
   left: 20%;
+  text-align: center;
+  width: 700px;
 }
+
+#survey_create_form #title {
+  text-align: center;
+  font-size: 22px;
+  color: #006E4A;
+}
+
+#survey_create_form .question-tile {
+  text-align: center;
+  border: 1px solid #006E4A;
+  border-radius: 5px;
+  padding: 5px;
+  width: 450px;
+  margin: auto;
+  padding-bottom: 10px;
+
+}
+
+#survey_create_form .question-field {
+  width: 300px;
+  margin: 10px auto;
+}
+
+#survey_create_form label {
+  font-size: 18px;
+  color: #006E4A;
+  margin
+}
+
+#survey_create_form .remove-question {
+  font-size: 15px;
+  color: #006E4A;
+  border: 1px solid #006E4A;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+#survey_create_form .add-question {
+  font-size: 15px;
+  color: #006E4A;
+  border: 1px solid #006E4A;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+#survey_create_form .choice-field {
+  margin: 5px 0px 0px 50px;
+  width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
