@@ -2,3 +2,6 @@
 <% @survey.questions.each do |question| %>
   <%= erb :_question_results, :locals => {:question => question} %>
 <% end %>
+<form action='/home'>
+  <input id='return-home' type='submit' value='More Surveys'> 
+</form>
