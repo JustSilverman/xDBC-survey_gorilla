@@ -204,6 +204,7 @@ body {
 
 .buttons div {
   display: inline;
+  box-shadow: 4px 4px 5px #888;
 }
 
 .create-survey-button {
