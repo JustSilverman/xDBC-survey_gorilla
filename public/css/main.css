@@ -108,30 +108,28 @@ body {
 
 #survey_create_form {
   margin: 10px auto;
-  border: 5px ridge #00A876;
+  border: 5px ridge #8351AD;
   box-shadow: 5px 5px 5px #888;
-  background-color: ;
-  width: 400px;
-  left: 20%;
-  text-align: center;
+  background-color: #8351AD;
   width: 700px;
-}
-
-#survey_create_form #title {
+  padding: 10px;
+  position: relative;
+  font-size: 25px;
+  color: white;
   text-align: center;
-  font-size: 22px;
-  color: #006E4A;
 }
 
 #survey_create_form .question-tile {
-  text-align: center;
-  border: 1px solid #006E4A;
+  background-color: #00A876;
+  box-shadow: 3px 3px 5px #333333;
+  border: 2px ridge #00A876;
   border-radius: 5px;
   padding: 5px;
   width: 450px;
-  margin: auto;
+  margin: 10px auto;
   padding-bottom: 10px;
-
+  font-size: 18px;
+  position: relative;
 }
 
 #survey_create_form .question-field {
@@ -139,32 +137,46 @@ body {
   margin: 10px auto;
 }
 
-#survey_create_form label {
-  font-size: 18px;
-  color: #006E4A;
-  margin
-}
-
-
 #survey_create_form .remove-question {
   font-size: 15px;
-  color: #006E4A;
-  border: 1px solid #006E4A;
+  color: white;
+  box-shadow: 3px 3px 5px #333333;
+  background-color: #8351AD;
+  border: 1px groove #8351AD;
   border-radius: 3px;
-  padding: 3px;
+  padding: 5px;
+  position: relative;
+  margin-left: 250px;
 }
 
 #survey_create_form .add-question {
   font-size: 15px;
-  color: #006E4A;
-  border: 1px solid #006E4A;
+  color: white;
+  box-shadow: 3px 3px 5px #333333;
+  border: 1px groove #00A876;
+  background-color: #00A876;
   border-radius: 3px;
-  padding: 3px;
+  padding: 5px;
+  position: relative;
+  margin-right: 360px;
+
 }
 
 #survey_create_form .choice-field {
   margin: 5px 0px 0px 50px;
   width: 250px;
+  position: relative;
+  left: 40px;
+}
+
+#survey_create_form #submit-button {
+  color: white;
+  box-shadow: 3px 3px 5px #333333;
+  border: 2px solid white;
+  background-color: #00A876;
+  border-radius: 3px;
+  padding: 5px 15px;
+
 }
 
 /* ------------- SURVEYS_DISPLAY ---------- */
@@ -213,9 +225,10 @@ body {
 
 .created-surveys-header, .completed-surveys-header {
   border-bottom:1px solid grey;
-  background: #BC9DCF;
+  background: #8351AD;
   float:left;
   width: 100%;
+  color: white;
 }
 
 .survey-link, .no-surveys {
