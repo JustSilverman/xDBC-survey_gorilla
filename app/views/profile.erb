@@ -1,6 +1,15 @@
-<h2>Created Surveys</h2>
-<%= erb :_survey_list, :locals => {:surveys => @user.created_surveys,
-                                   :message => "created"} %>
-<h2>Completed Surveys</h2>
-<%= erb :_survey_list, :locals => {:surveys => @user.responded_surveys,
-                                   :message => "completed"} %>
+<h2>Welcome back, <%=current_user.name%>!</h2>
+
+<div class="created-surveys">
+  <div class="created-surveys-header"><h3>Created Surveys</h3></div>
+
+  <%= erb :_survey_list, :locals => {:surveys => @user.created_surveys,
+                                     :message => "create"} %>
+</div>                                   
+
+<div class="completed-surveys">
+  <div class="completed-surveys-header"><h3>Completed Surveys</h3></div>
+  <%= erb :_survey_list, :locals => {:surveys => @user.responded_surveys,
+                                     :message => "complete"} %>
+  </div>
+</div>  

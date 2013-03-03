@@ -1,5 +1,6 @@
 <% if surveys.empty? %>
-  <p>You have yet to <%= message %> a survey.  Get after it!</p>
+  <div class="no-surveys">
+  <a href="/home"><p>You have yet to <%= message %> a survey.  Get after it!</p></a></div>
 <% end %>
 <% surveys.each do |survey| %>
   <%= erb :_survey, :locals => {:survey => survey} %>

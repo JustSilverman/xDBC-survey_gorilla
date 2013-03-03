@@ -157,7 +157,7 @@ body {
 }
 
 .survey-list h1{
-  color: #F7EEFF;
+  color: #F0DFFF;
 }
 
 .each-survey {
@@ -176,4 +176,22 @@ body {
   color: #49434D;
 }
 
+/* ------------- USER_PROFILE ---------- */
 
+.no-surveys a {
+  text-decoration: none;
+}
+
+.profile-form {
+  border: 1px solid grey;
+}
+
+.created-surveys, .completed-surveys {
+  border:1px solid grey;
+  margin-top: 40px;
+  text-indent: 10px;
+}
+
+.created-surveys-header, .completed-surveys-header {
+  border-bottom:1px solid grey;
+}
