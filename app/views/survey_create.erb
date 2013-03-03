@@ -2,13 +2,13 @@
 
 <form id='survey_create_form' action="/surveys" method="post">
 <p id='title'>Survey Title:
-  <input type="text" name="survey_title" placeholder="Name your survey.">
+  <input type="text" name="survey_title" placeholder="Name your survey." required/>
 </p>
 <p class='question-tile'>
   <label> Question: </label>
-  <input class="question-field" type="text" name="questions[][content]" placeholder='Enter your Question'>
+  <input class="question-field" type="text" name="questions[][content]" placeholder='Enter your Question' required/>
   <% 3.times do %>
-    <br><input class='choice-field' type="text" name="questions[]choices[]" placeholder="Enter a Choice">
+    <br><input class='choice-field' type="text" name="questions[]choices[]" placeholder="Enter a Choice" required/>
   <% end %>
   <br><br>
   <span class="remove-question"> Remove Question </span>

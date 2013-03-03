@@ -3,7 +3,7 @@ $(document).ready(function(){
   //add a question with 3 choices
   $(this).on("click", '.add-question', function(){
     questionCount++;
-    var questionchoices = '<p class="question-tile"><label> Question: </label><input class="question-field" type="text" name="questions[][content]" placeholder="Enter your Question"><br><input class="choice-field" type="text" name="questions[]choices[]" placeholder="question choice"><br><input class="choice-field" type="text" name="questions[]choices[]" placeholder="question choice"><br><input class="choice-field"  type="text" name="questions[]choices[]" placeholder="question choice"><br><br><span class="remove-question"> Remove Question</span></p>'
+    var questionchoices = '<p class="question-tile"><label> Question: </label><input class="question-field" type="text" name="questions[][content]" placeholder="Enter your Question" required/><br><input class="choice-field" type="text" name="questions[]choices[]" placeholder="question choice" required/><br><input class="choice-field" type="text" name="questions[]choices[]" placeholder="question choice" required/><br><input class="choice-field"  type="text" name="questions[]choices[]" placeholder="question choice" required/><br><br><span class="remove-question"> Remove Question</span></p>'
     $(this).parent().before(questionchoices);
   });
 
