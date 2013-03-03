@@ -3,11 +3,30 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  @survey = Survey.create :title      => params[:survey_title],
-                          :creator_id => current_user.id
-  @survey.add_questions(params[:questions])
+  # p params
+  # p params[:survey_title]
+  # p params[:questions].first["content"]
+  # p params[:questions].first["choices"] 
+  # p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+  @survey = Survey.new :title      => params[:survey_title],
+                       :creator_id => current_user.id
+  @questions = params[:questions].first["content"]                     
+  @choices = params[:questions].first["choices"]  
 
-  redirect "/surveys/#{@survey.id}"
+  if @choices.reject(&:empty?).length > 0
+    if @questions != ""
+      if @survey.save
+        @survey.add_questions(params[:questions])
+        redirect "/surveys/#{@survey.id}"
+      else
+        erb :survey_create
+      end
+    else
+      erb :survey_create
+    end
+  else
+    erb :survey_create  
+  end        
 end
 
 post '/surveys/submit' do
@@ -15,7 +34,6 @@ post '/surveys/submit' do
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
                                           :responder_id => params[:responder_id])
   # Need to break if blank survey is submitted
-  raise params.inspect
   if @survey.completed?(params[:selections].first.keys) && @survey_responder.save
     @survey_responder.create_selections(params[:selections].first.values)
     redirect "/surveys/#{@survey.id}"
