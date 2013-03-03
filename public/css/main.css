@@ -107,17 +107,27 @@ body {
 /* Need to build a coord system here with postioning. */
 
 #survey_create_form {
-  margin: 10px auto;
-  border: 5px ridge #8351AD;
+  margin: auto;
   box-shadow: 5px 5px 5px #888;
-  background-color: #8351AD;
   width: 700px;
-  padding: 10px;
   position: relative;
   font-size: 25px;
   color: white;
   text-align: center;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
+
+#survey_create_form #title {
+  width: 100%;
+  border-bottom: 1px solid white;
+  background-color: #8351AD;
+  padding: 20px 0px;
+  text-indent: 10px;
+  margin-bottom: 40px;
+}
+
+
 
 #survey_create_form .question-tile {
   background-color: #00A876;
@@ -140,7 +150,6 @@ body {
 #survey_create_form .remove-question {
   font-size: 15px;
   color: white;
-  box-shadow: 3px 3px 5px #333333;
   background-color: #8351AD;
   border: 1px groove #8351AD;
   border-radius: 3px;
@@ -172,8 +181,7 @@ body {
 #survey_create_form #submit-button {
   color: white;
   box-shadow: 3px 3px 5px #333333;
-  border: 2px solid white;
-  background-color: #00A876;
+  background-color: #8351AD;
   border-radius: 3px;
   padding: 5px 15px;
 

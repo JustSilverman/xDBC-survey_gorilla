@@ -1,9 +1,9 @@
 <%= erb :_errors, :locals => { :object => @survey } if @survey%>
 
 <form id='survey_create_form' action="/surveys" method="post">
-<p id='title'>Survey Title:
+<div id='title'>Survey Title:
   <input type="text" name="survey_title" placeholder="Name your survey" required/>
-</p>
+</div>
 <p class='question-tile'>
   <label> Question: </label>
   <input class="question-field" type="text" name="questions[][content]" placeholder='Enter your Question' required/>
