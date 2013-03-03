@@ -5,17 +5,19 @@ class Survey < ActiveRecord::Base
   has_many   :responders, :through => :survey_responders, :source => :user
 
   validates_presence_of :title
+  validate :validate_questions
+
+  before_save { self.title.strip! }
 
   def add_questions(questions)
     questions.each do |question|
-      new_question = self.questions.create(:content => question["content"])
+      new_question = self.questions.build(:content => question["content"])
       new_question.add_choices(question["choices"])
     end
   end
 
-  def completed?(submitted_ids)
-    unless submitted_ids.map(&:to_i).sort == self.question_ids
-      errors[:base] << "Survey is incomplete"
-    end
+  private
+  def validate_questions
+    errors[:base] << "Survey must have at least 1 question" if questions.empty?
   end
 end

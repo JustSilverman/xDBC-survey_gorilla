@@ -1,5 +1,5 @@
 <form action="/surveys/submit" method="post">
-  <!-- need to show validations for @survey and @survey_responder -->
+  <%= erb :_errors, :locals => { :object => @survey_responder } if @survey_responder %>
   <input type="hidden" name="survey_id" value="<%= @survey.id %>">
   <input type="hidden" name="responder_id" value="<%= current_user.id %>">
   <% @survey.questions.each do |question| %>

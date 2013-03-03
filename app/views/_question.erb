@@ -2,7 +2,7 @@
   <h3 class="question-title"><%= question.content %></h3>
   <% question.choices.each do |choice| %>
     <div class="choice">
-      <input type="radio" name="<%= "selections[]#{question.id}" %>" value="<%= choice.id %>" ><%= choice.content %>
+      <input type="radio" name="<%= "selections[#{question.id}]" %>" value="<%= choice.id %>" required><%= choice.content %>
     </div>
   <% end %>
 </div>

@@ -4,4 +4,6 @@ class Choice < ActiveRecord::Base
   has_many :responders, :through => :selections, :class_name => "User"
 
   validates_presence_of :content
+
+  before_save { self.content.strip! }
 end
