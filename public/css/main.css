@@ -149,15 +149,12 @@ body {
 /* ------------- SURVEYS_DISPLAY ---------- */
 
 .survey-list {
-  border: 1px solid grey;
-}
-
-.survey-list {
-  background: #642996;
+  border-bottom: 1px solid grey;
 }
 
 .survey-list h1{
-  color: #F0DFFF;
+  color: #642996;
+  margin-bottom: 5px;
 }
 
 .each-survey {
@@ -190,8 +187,50 @@ body {
   border:1px solid grey;
   margin-top: 40px;
   text-indent: 10px;
+  width: 500px;
 }
 
 .created-surveys-header, .completed-surveys-header {
   border-bottom:1px solid grey;
+  background: #BC9DCF;
+  float:left;
+  width: 100%;
 }
+
+.survey-link, .no-surveys {
+  padding-top: 10px;
+  clear: both;
+}
+
+.buttons div {
+  display: inline;
+}
+
+.create-survey-button {
+  border: 1px solid grey;
+  width: 120px;
+  text-align: center;
+  padding: 8px;
+  background: #8351AD;
+  border-radius: 5px
+}
+
+.create-survey-button a {
+  text-decoration: none;
+  color: white;
+} 
+
+.see-surveys-button {
+  border: 1px solid grey;
+  width: 120px;
+  text-align: center;
+  padding: 8px ;
+  background: #8351AD;
+  border-radius: 5px
+
+}
+
+.see-surveys-button a {
+  text-decoration: none;
+  color: white;
+}  

@@ -4,7 +4,7 @@
   </div>  
     <% @surveys.each do |survey| %>
       <div class="each-survey">
-        <h3><a href="/survey/<%=survey.id%>/engage"><%= survey.title %></a></h3>
+        <h3><a href="/surveys/<%=survey.id%>/engage"><%= survey.title %></a></h3>
         <div>By <a href="/users/<%=survey.creator.id%>"><%= survey.creator.name %></a></div>
       </div>  
     <% end %>
