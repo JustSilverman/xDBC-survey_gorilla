@@ -124,6 +124,7 @@ body {
   margin
 }
 
+
 #survey_create_form .remove-question {
   font-size: 15px;
   color: #006E4A;
@@ -145,21 +146,34 @@ body {
   width: 250px;
 }
 
+/* ------------- SURVEYS_DISPLAY ---------- */
 
+.survey-list {
+  border: 1px solid grey;
+}
 
+.survey-list {
+  background: #642996;
+}
 
+.survey-list h1{
+  color: #F7EEFF;
+}
 
+.each-survey {
+  margin: 0px;
+  float: left;
+  clear: both;
+  width: 100%;
+}
 
+.each-survey:nth-child(odd) {
+  background: #BC9DCF;
+}
 
-
-
-
-
-
-
-
-
-
-
+.each-survey a:link {
+  text-decoration: none;
+  color: #49434D;
+}
 
 

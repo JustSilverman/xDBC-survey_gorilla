@@ -5,12 +5,13 @@ get '/' do
 end
 
 get '/home' do 
-  current_user ? erb(:surveys_show) : erb(:login_signup)
+  @surveys = Survey.all
+  current_user ? erb(:surveys_display) : erb(:login_signup)
 end
 
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :user_show
+  erb :profile
 end 
 
 post '/signup' do

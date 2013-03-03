@@ -15,6 +15,7 @@ post '/surveys/submit' do
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
                                           :responder_id => params[:responder_id])
   # Need to break if blank survey is submitted
+  raise params.inspect
   if @survey.completed?(params[:selections].first.keys) && @survey_responder.save
     @survey_responder.create_selections(params[:selections].first.values)
     redirect "/surveys/#{@survey.id}"
