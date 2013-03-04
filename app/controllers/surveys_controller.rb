@@ -19,7 +19,7 @@ post '/surveys/submit' do
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
                                           :responder_id => params[:responder_id])
   if @survey_responder.save
-    @survey_responder.create_selections(params[:selections].values)
+    @survey_responder.create_selections(params[:selections].values) #KIKU
     redirect "/surveys/#{@survey.id}"
   else
     erb :survey_engage

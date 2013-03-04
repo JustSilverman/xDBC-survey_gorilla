@@ -5,10 +5,10 @@ class Question < ActiveRecord::Base
   validates_presence_of :content
   validate :validate_choices
 
-  before_save { self.content.strip! }
+  before_save { self.content.strip! } #KIKU just gets rid of whitespace?
 
   def total_responders
-    Selection.where(:response_id => self.choice_ids).count
+    Selection.where(:response_id => self.choice_ids).count #KIKU self.choice_ids returns? why does response_id equate to choice id?
   end
 
   def choice_percentage(choice_id)
@@ -20,7 +20,7 @@ class Question < ActiveRecord::Base
   end
 
   def add_choices(choices)
-    choices.each { |choice| self.choices.build(:content => choice) }
+    choices.each { |choice| self.choices.build(:content => choice) } #KIKU
   end
 
   private

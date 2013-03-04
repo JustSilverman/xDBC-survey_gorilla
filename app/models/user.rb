@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :selections, :foreign_key => "responder_id"
   has_many :responses,  :through => :selections, :class_name => "Choice"
   has_many :survey_responders, :foreign_key => "responder_id"
-  has_many :responded_surveys, :through => :survey_responders, :source => :survey
+  has_many :responded_surveys, :through => :survey_responders, :source => :survey #KIKU
 
   validates_presence_of :name, :email, :password
 
