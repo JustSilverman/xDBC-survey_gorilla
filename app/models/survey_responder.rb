@@ -6,7 +6,7 @@ class SurveyResponder < ActiveRecord::Base
 
   def create_selections(response_ids)
      response_ids.each do |response_id|
-       Selection.create(:response_id => response_id, :responder_id => self.id)
+       Selection.create(:response_id => response_id, :responder_id => self.responder_id)
      end
   end
 end

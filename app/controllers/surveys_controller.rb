@@ -17,7 +17,7 @@ end
 post '/surveys/submit' do
   @survey = Survey.find(params[:survey_id])
   @survey_responder = SurveyResponder.new(:survey_id => params[:survey_id],
-                                          :responder_id => params[:responder_id])
+                                          :responder_id => current_user.id)
   if @survey_responder.save
     @survey_responder.create_selections(params[:selections].values) #KIKU
     redirect "/surveys/#{@survey.id}"

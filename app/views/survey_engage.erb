@@ -2,7 +2,6 @@
 <form action="/surveys/submit" method="post">
   <%= erb :_errors, :locals => { :object => @survey_responder } if @survey_responder %>
   <input type="hidden" name="survey_id" value="<%= @survey.id %>">
-  <input type="hidden" name="responder_id" value="<%= current_user.id %>">
   <% @survey.questions.each do |question| %>
     <%= erb :_question, :locals => {:question => question} %>
   <% end %>

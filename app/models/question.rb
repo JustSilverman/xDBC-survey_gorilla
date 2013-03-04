@@ -15,6 +15,7 @@ class Question < ActiveRecord::Base
     ((Choice.find(choice_id).selections.count / self.total_responders.to_f) * 100).round(1)
   end
 
+  # TODO - Make this work
   def sorted_choices
     # self.choices.sort_by { |choice| 1 / choice_percentage(choice.id) }
   end
